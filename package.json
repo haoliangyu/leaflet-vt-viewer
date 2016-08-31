@@ -1,0 +1,68 @@
+{
+  "name": "leaflet-vt-viewer",
+  "version": "0.1.0",
+  "description": "vector tile viewer based on leaflet",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haoliangyu/leaflet-vt-viewer.git"
+  },
+  "author": "Haoliang Yu <haholiang.yu@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/haoliangyu/leaflet-vt-viewer/issues"
+  },
+  "homepage": "https://github.com/haoliangyu/leaflet-vt-viewer#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.9.1",
+    "babel-eslint": "^6.0.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-ng-annotate": "^0.3.2",
+    "babel-plugin-syntax-decorators": "^6.8.0",
+    "css-loader": "^0.24.0",
+    "eslint": "^3.4.0",
+    "eslint-loader": "^1.3.0",
+    "eslint-plugin-angular": "^1.0.1",
+    "eslint-plugin-html": "^1.5.1",
+    "eslint-plugin-json": "^1.2.0",
+    "exports-loader": "^0.6.3",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.21.0",
+    "image-webpack-loader": "^2.0.0",
+    "json-loader": "^0.5.4",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "ngtemplate-loader": "^1.3.1",
+    "raw-loader": "^0.5.1",
+    "script-ext-html-webpack-plugin": "^1.3.0",
+    "style-loader": "^0.13.1",
+    "to-string-loader": "^1.1.4",
+    "transform-loader": "^0.2.3",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.15.0",
+    "webpack-sources": "^0.1.2",
+    "webworkify-webpack": "^1.1.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-aria": "^1.5.8",
+    "angular-material": "^1.1.0",
+    "angular-route": "^1.5.8",
+    "geojson-vt": "^2.4.0",
+    "leaflet": "^1.0.0-rc.3",
+    "leaflet.vectorgrid": "^0.1.2",
+    "lodash": "^4.15.0",
+    "pbf": "^3.0.0",
+    "rx-angular": "^1.1.3",
+    "sphericalmercator": "^1.0.5",
+    "topojson": "^1.6.26",
+    "vector-tile": "^1.3.0"
+  }
+}
