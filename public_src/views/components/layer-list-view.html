@@ -1,0 +1,13 @@
+<p class="title">Layer List</p>
+
+<md-list>
+  <md-list-item ng-repeat="layer in layerList.layers"
+                ng-click="selectLayer(layer.name)"
+                ng-class="{ 'list-item-active': layerList.selectedLayer === layer.name }">
+    <md-checkbox class="md-primary"
+                 ng-model="layer.visible"
+                 ng-click="toggleLayer(layer.name)">
+    </md-checkbox>
+    <p>{{ layer.name }}</p>
+  </md-list-item>
+</md-list>

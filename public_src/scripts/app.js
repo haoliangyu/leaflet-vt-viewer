@@ -5,12 +5,16 @@ import angular from 'angular';
 import 'angular-material';
 import 'angular-route';
 import 'lodash';
+import 'rx-angular';
 
+require('../../node_modules/angular-material/angular-material.css');
+require('../../node_modules/leaflet/dist/leaflet.css');
 require('../styles/app.less');
 
 angular.module('leaflet-vt-viewer', [
   'ngMaterial',
-  'ngRoute'
+  'ngRoute',
+  'rx'
 ])
 .constant('_', window._)
 .config(function($routeProvider, $locationProvider, $mdThemingProvider) {
@@ -31,3 +35,4 @@ angular.module('leaflet-vt-viewer', [
 function requireAll(r) { r.keys().forEach(r); }
 requireAll(require.context('./services/', true, /\.js$/));
 requireAll(require.context('./controllers/', true, /\.js$/));
+requireAll(require.context('./directives/', true, /\.js$/));

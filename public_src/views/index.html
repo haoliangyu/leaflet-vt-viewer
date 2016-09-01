@@ -5,13 +5,21 @@
     <title>leaflet-vt-viewer</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
   </head>
 
   <body layout="row" flex>
-    <div flex="70">First item in row</div>
-    <div flex="30" layout="column">
-      <div flex></div>
-      <div flex></div>
+    <div flex="70" ng-controller="mapCtrl">
+      <div id="map"></div>
+    </div>
+    <div flex="30" style="overflow-y: auto">
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h3 class="md-headline">Leaflet Vector Tile Viewer</h3>
+        </div>
+      </md-toolbar>
+      <layer-info-view></layer-info-view>
+      <layer-list-view></layer-list-view>
     </div>
   </body>
 
