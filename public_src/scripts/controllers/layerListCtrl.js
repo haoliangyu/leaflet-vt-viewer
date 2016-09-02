@@ -9,7 +9,6 @@ class layerListCtrl {
 
     $scope.$createObservableFunction('selectLayer')
       .subscribe(name => {
-        console.log(name);
         if (name === this.selectedLayer) {
           this.selectedLayer = undefined;
           $rootScope.$broadcast('layer:unselected', name);

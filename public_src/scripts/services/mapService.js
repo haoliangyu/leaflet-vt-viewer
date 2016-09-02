@@ -6,10 +6,11 @@ require('../../../node_modules/leaflet.vectorgrid/dist/Leaflet.VectorGrid.js');
 
 class mapService {
 
-  constructor() {
+  constructor($rootScope) {
     'ngInject';
 
     this.layers = [];
+    this.$rootScope = $rootScope;
   }
 
   initialize() {
@@ -24,6 +25,7 @@ class mapService {
     });
 
     this.map.addLayer(basemap);
+    this.$rootScope.$broadcast('map:loaded');
   }
 
   addLayer(name, url, renderMethod) {
@@ -44,7 +46,7 @@ class mapService {
   removeLayer(name) {
     var index = _.findIndex(this.layers, { name: name });
 
-    if (index) {
+    if (index > -1) {
       this.map.removeLayer(this.layers[index].layer);
       this.layers.splice(index, 1);
     }
@@ -63,7 +65,7 @@ class mapService {
   }
 }
 
-mapService.$inject = [];
+mapService.$inject = ['$rootScope'];
 
 angular.module('leaflet-vt-viewer').service('mapService', mapService);
 
