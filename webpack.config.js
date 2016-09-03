@@ -11,7 +11,8 @@ module.exports = {
   devtool: 'eval',
   debug: true,
   entry: {
-    app: path.resolve(srcDir, 'scripts/app.js')
+    app: path.resolve(srcDir, 'scripts/app.js'),
+    vendor: ['angular', 'jsoneditor', 'lodash', 'leaflet', 'topojson']
   },
   output: {
     path: outputDir,
@@ -67,10 +68,11 @@ module.exports = {
       JSONEditor: 'jsoneditor',
       'window.JSONEditor': 'jsoneditor'
     }),
+    new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.bundle.js'),
     new ExtractTextPlugin('[name].css'),
     new HtmlWebpackPlugin({
       template: path.resolve(srcDir, 'views/index.html'),
-      inject: true
+      inject: 'head'
     }),
     new ScriptExtHtmlWebpackPlugin({
       defaultAttribute: 'defer'

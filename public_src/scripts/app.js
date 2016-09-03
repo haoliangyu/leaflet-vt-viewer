@@ -4,9 +4,7 @@
 import angular from 'angular';
 import 'angular-material';
 import 'angular-route';
-import 'lodash';
 import 'rx-angular';
-import 'jsoneditor';
 import 'ng-jsoneditor';
 
 require('../../node_modules/jsoneditor/dist/jsoneditor.css');
