@@ -12,5 +12,6 @@ This project is built with [webpack](https://webpack.github.io/).
 
 ## What's next?
 
-* [ ] support import a layer list in JSON file
-* [ ] support updating layer style on-the-fly 
+* [ ] support importing layer list from a JSON file
+* [x] support adding style to vector tile layers
+* [ ] support updating layer style on-the-fly
