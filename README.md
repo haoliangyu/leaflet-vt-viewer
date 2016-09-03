@@ -2,6 +2,8 @@
 
 Vector tile viewer and tester based on [Leaflet](http://leafletjs.com/) and [Leaflet.VectorGrid](https://github.com/IvanSanchez/Leaflet.VectorGrid).
 
+![preview](https://raw.githubusercontent.com/haoliangyu/leaflet-vt-viewer/master/preview.png)
+
 ## Develop and Use Locally
 
 This project is built with [webpack](https://webpack.github.io/).
