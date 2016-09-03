@@ -37,10 +37,18 @@ module.exports = {
       { test: /\.html$/, loader: 'raw' },
       { test: /\.less$/, loader: 'style!css!less' },
       { test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css') },
-      { test: /\.(png|gif|jpg)$/, loaders: ['file?name=images/[name].[ext]', 'image-webpack'] }
+      { test: /\.(png|gif|jpg)$/, loaders: ['file?name=images/[name].[ext]', 'image-webpack'] },
+      // For font-awesome, created by Turbo87:
+      // https://gist.github.com/Turbo87/e8e941e68308d3b40ef6
+      { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=fonts/[name].[ext]' },
+      { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=fonts/[name].[ext]' },
+      { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=fonts/[name].[ext]' },
+      { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=fonts/[name].[ext]' },
+      { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=fonts/[name].[ext]' }
     ]
   },
   plugins: [
+    new webpack.IgnorePlugin(/regenerator|nodent|js\-beautify/, /ajv/),
     new webpack.optimize.UglifyJsPlugin({
       mangle: false
     }),
@@ -49,7 +57,9 @@ module.exports = {
       Pbf: 'pbf',
       vectorTile: 'vector-tile',
       geojsonvt: 'geojson-vt',
-      SphericalMercator: 'sphericalmercator'
+      SphericalMercator: 'sphericalmercator',
+      JSONEditor: 'jsoneditor',
+      'window.JSONEditor': 'jsoneditor'
     }),
     new ExtractTextPlugin('[name].css'),
     new HtmlWebpackPlugin({

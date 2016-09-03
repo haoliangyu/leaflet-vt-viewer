@@ -28,9 +28,12 @@ class mapService {
     this.$rootScope.$broadcast('map:loaded');
   }
 
-  addLayer(name, url, renderMethod) {
+  addLayer(name, url, renderMethod, style) {
+    style = style || {};
+
     const vtLayer = L.vectorGrid.protobuf(url, {
-      rendererFactory: L[renderMethod].tile
+      rendererFactory: L[renderMethod].tile,
+      vectorTileLayerStyles: style
     });
 
     this.map.addLayer(vtLayer);
@@ -39,7 +42,8 @@ class mapService {
       url: url,
       renderMethod: renderMethod,
       visible: true,
-      layer: vtLayer
+      layer: vtLayer,
+      style: style
     });
   }
 

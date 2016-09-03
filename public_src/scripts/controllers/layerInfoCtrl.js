@@ -5,6 +5,9 @@ class layerInfoCtrl {
   constructor($scope, $rootScope, mapService) {
     'ngInject';
 
+    this.showStyleEditor = false;
+    this.styleEditorOptions = { mode: 'code' };
+
     this.renderMethod = 'svg';
     this.$rootScope = $rootScope;
 
@@ -16,7 +19,7 @@ class layerInfoCtrl {
     $scope.$createObservableFunction('addLayer')
       .subscribe(() => {
         if (this.name && this.url) {
-          mapService.addLayer(this.name, this.url, this.renderMethod);
+          mapService.addLayer(this.name, this.url, this.renderMethod, this.style);
           this.reset();
         }
       });
@@ -35,6 +38,7 @@ class layerInfoCtrl {
       this.name = layer.name;
       this.url = layer.url;
       this.renderMethod = layer.renderMethod;
+      this.style = layer.style;
     });
 
     $scope.$on('layer:unselected', () => {
@@ -46,6 +50,7 @@ class layerInfoCtrl {
     this.name = '';
     this.url = '';
     this.renderMethod = 'svg';
+    this.style = undefined;
 
     this.$rootScope.$broadcast('layer:unselect');
   }

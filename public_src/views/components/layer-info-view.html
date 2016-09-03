@@ -14,11 +14,33 @@
         <input ng-model="layerInfo.url">
       </md-input-container>
 
-      <p class="md-body-2">Layer Rendering Method</p>
-      <md-radio-group ng-model="layerInfo.renderMethod" layout="row">
-        <md-radio-button value="svg"> SVG </md-radio-button>
-        <md-radio-button value="canvas"> Canvas </md-radio-button>
-      </md-radio-group>
+      <div>
+        <p class="md-body-2">Layer Rendering Method</p>
+        <md-radio-group ng-model="layerInfo.renderMethod" layout="row">
+          <md-radio-button value="svg"> SVG </md-radio-button>
+          <md-radio-button value="canvas"> Canvas </md-radio-button>
+        </md-radio-group>
+      </div>
+
+      <div>
+        <p class="md-body-2 clickable" ng-click="layerInfo.showStyleEditor = !layerInfo.showStyleEditor">
+          <i class="fa"
+             ng-class="{ 'fa-caret-right': !layerInfo.showStyleEditor, 'fa-caret-down': layerInfo.showStyleEditor }">
+          </i>
+           	&nbsp;Layer Style (JSON format)
+        </p>
+        <div ng-jsoneditor
+             class="layer-style-editor"
+             ng-model="layerInfo.style"
+             options="layerInfo.styleEditorOptions"
+             ng-show="layerInfo.showStyleEditor">
+        </div>
+        <a href="https://github.com/IvanSanchez/Leaflet.VectorGrid#styling"
+           target="_blank"
+           ng-show="layerInfo.showStyleEditor">
+           <i class="fa fa-link"></i>&nbsp;Style Guide for Leaflet.VectorGrid
+        </a>
+      </div>
     </form>
   </section>
 

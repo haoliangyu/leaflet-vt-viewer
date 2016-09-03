@@ -6,15 +6,20 @@ import 'angular-material';
 import 'angular-route';
 import 'lodash';
 import 'rx-angular';
+import 'jsoneditor';
+import 'ng-jsoneditor';
 
+require('../../node_modules/jsoneditor/dist/jsoneditor.css');
 require('../../node_modules/angular-material/angular-material.css');
 require('../../node_modules/leaflet/dist/leaflet.css');
+require('../../node_modules/font-awesome/css/font-awesome.css');
 require('../styles/app.less');
 
 angular.module('leaflet-vt-viewer', [
   'ngMaterial',
   'ngRoute',
-  'rx'
+  'rx',
+  'ng.jsoneditor'
 ])
 .constant('_', window._)
 .config(function($routeProvider, $locationProvider, $mdThemingProvider) {
